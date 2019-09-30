@@ -31,7 +31,7 @@
               <a class="nav-link" href="registro.php">REGISTRARSE <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.php">INICIAR SECION <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="login.php">INICIAR SESION <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="cargarvehiculo.php">CARGA DE VEHICULOS <span class="sr-only">(current)</span></a>
@@ -50,21 +50,15 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-
-      <h1>INICIAR SESION</h1>
-        <form action="hacerLogin.php">
-          <p> Ingrese su nombre y contraseña </p>
-          <br>
-          <br>
-              Nombre:<br>
-              <input type="text" name="nombre" value="">
+     <h1>BUSCAR PATENTE</h1>
+        <form action="hacerfacturar.php">
+              <img src="https://us.cdn.eltribuno.com/072016/1487243186771.jpg" width=100 height=100><br>
+              Patente:<br>
+              <input type="text" name="patente" value="">
               <br>
-              Contraseña:<br>
-              <input type="text" name="contraseña" value="">
-              <br><br>
-              <input type="submit" value="cargar">
-              
+              <input type="submit" value="aceptar">
         </form> 
+      
     </main>
 
     <footer class="footer">

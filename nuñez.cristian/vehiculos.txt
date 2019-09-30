@@ -1,1 +1,3 @@
 
+{"patente":"iwv783","horaVehiculo":"03:03"}
+{"patente":"789654","horaVehiculo":"03:05"}
