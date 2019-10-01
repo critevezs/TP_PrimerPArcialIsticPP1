@@ -26,6 +26,7 @@ while(!feof ($archivo))
 		fclose($archivo);
 		
     }
-{
+}   
+
 fclose($archivo);
 ?>

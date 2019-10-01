@@ -7,24 +7,28 @@ $patente2 = $_GET['patente'];
  
  $precio=5;
 
+
 $archivo = fopen('vehiculos.txt', 'r');
 
 while(!feof ($archivo))
 {
 	$objeto = json_decode(fgets($archivo));
 
-    if ($objeto->patente == $patente2)
+	$autoIngreso= $$objeto->patente;
+	$horaAuto = $objeto->$horaEntrada;
+
+    if ($autoIngreso == $patente2)
     {
-    	$tiempo = $objeto->$horaEntrada - $horaSalida;
+    	$tiempo = $horaAuto - $horaSalida;
 
     	$hora = $tiempo;
         list($horas, $minutos,) = explode(':', $hora);
         $hora_en_segundos = ($horas * 3600 ) + ($minutos * 60 );
         echo $tiempoPagar
 
-        $pagar = $tiempoPagar * $precio;
+        $pagar = $tiempoPagar * $precio
 
-    	header("Location: pagar.php");
+    	header("Location: pagar.php? cobrar=".$pagar."&ingreso=".$horaAuto."&salida=".$horaSalida);
 		fclose($archivo);
 		exit();
 	}

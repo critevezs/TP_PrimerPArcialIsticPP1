@@ -50,14 +50,24 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      
+     <form action="hacerfacturar.php"> 
       <h1>DEBE ABONAR</h1>
 
+      <?php
+          $Pagar = $_GET['cobrar'];
+          $ingreso = $_GET['ingreso'];
+          $salida = $_GET['salida'];
+
+          echo "<p>Fecha de ingreso: ".date("m-d h:i:sa",$ingreso)."</p><br>";
+          echo "<p>Fecha de salida: ".date("m-d h:i:sa",$salida)."</p><br>";
+          echo "<p>cobrar: $".$Pagar."</p><br>";
 
 
-     
 
-      
+          ?>
+
+          <a href="index.php"><h4>inicio</h4></a>
+        
     </main>
 
     <footer class="footer">

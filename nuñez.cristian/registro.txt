@@ -1,5 +1,2 @@
-{"nombre":"pedro","contrase\u00f1a":"123456"}
-{"nombre":"a","contrase\u00f1a":"123"}
-{"nombre":"b","contrase\u00f1a":"120"}
-{"nombre":"roman","contrase\u00f1a":"10"}
-{"nombre":"pablo","contrase\u00f1a":"perez"}
+
+{"nombre":"cristian","contrase\u00f1a":"1212"}
