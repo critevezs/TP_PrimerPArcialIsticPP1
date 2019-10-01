@@ -56,6 +56,8 @@
               Patente:<br>
               <input type="text" name="patente" value="">
               <br>
+             
+
               <input type="submit" value="aceptar">
         </form> 
     </main>

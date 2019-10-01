@@ -1,3 +1,7 @@
 
-{"patente":"iwv783","horaVehiculo":"03:03"}
-{"patente":"789654","horaVehiculo":"03:05"}
+{"patente":"iwv783","horaVehiculo":1569909983}
+{"patente":"123456","horaEntrada":1569910032}
+{"patente":"asd123","horaEntrada":1569910181}
+{"patente":"qqq000","":1569912547,"horaEntrada":1569912547}
+{"patente":"azx147","":1569912598}
+{"patente":"qwe036","horaEntrada":1569912651}

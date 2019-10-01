@@ -2,7 +2,7 @@
 
 $nombreUsuario = $_GET['nombre'];
 $contraseñaUsuario = $_GET['contraseña'];
-$bandera=0;
+
 
 $archivo = fopen ('registro.txt','r');
 while(!feof ($archivo))
@@ -11,32 +11,21 @@ while(!feof ($archivo))
 
     if ($objeto->nombre == $nombreUsuario) 
     {
+        
     if ($objeto->contraseña == $contraseñaUsuario)
     {
-        $bandera=0;
-        
+    header("Location: ok.php");
+	fclose($archivo);
 	}
+
     }
-}
 
-
-	
-    if ($bandera==0)
-    {
-   
-        header("Location: ok.php");
-		fclose($archivo);
-		exit();
-	}
 	else
     {
     	header("Location: no.php");
 		fclose($archivo);
-		exit();
+		
     }
-    
-
-
-exit();
+{
 fclose($archivo);
 ?>

@@ -1,12 +1,14 @@
 <?php
- $miObjeto = new stdClass();
- $horaVehiculo = time(); 
+ $miObjeto2 = new stdClass();
+ 
  date_default_timezone_set('America/Argentina/Buenos_Aires');
- $horaVehiculo = date ("H:i", $horaVehiculo);
- $miObjeto->patente = $_GET['patente'];
- $miObjeto->horaVehiculo = $horaVehiculo;
+ $horaVehiculo = mktime(); 
+ 
+ $miObjeto2->patente = $_GET['patente'];
+ $miObjeto2->horaEntrada = $horaVehiculo;
+ 
  $archivo = fopen('vehiculos.txt', 'a');
- fwrite($archivo, json_encode($miObjeto)."\n");
+ fwrite($archivo, json_encode($miObjeto2)."\n");
  fclose($archivo);
  header("Location: ok.php");
 

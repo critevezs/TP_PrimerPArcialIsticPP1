@@ -28,13 +28,16 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="registro.php">REGISTRATE <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="registro.php">REGISTRARSE <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.php">INICIAR SECION</a>
+              <a class="nav-link" href="login.php">INICIAR SESION <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="cargarvehiculo.php">CARGA DE VEHICULOS</a>
+              <a class="nav-link disabled" href="cargarvehiculo.php">CARGA DE VEHICULOS <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="facturar.php">FACTURAR <span class="sr-only">(current)</span></a>
             </li>
           </ul>
           <form class="form-inline mt-2 mt-md-0">
@@ -47,14 +50,14 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
+      
+      <h1>DEBE ABONAR</h1>
 
-      <h1>EL REGISTRO FUE EXITOSO!!</h1>
-        <img src="https://maestrofinanciero.com/wp-content/uploads/2012/07/exitosos.jpg">
-        <br>
-        
-         
-        
-          <a href="index.php"><h4>inicio</h4></a>
+
+
+     
+
+      
     </main>
 
     <footer class="footer">

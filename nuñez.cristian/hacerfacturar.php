@@ -1,13 +1,13 @@
 <?php
+
+date_default_timezone_set('America/Argentina/Buenos_Aires');
+$horaSalida = mktime();
  
- $horaVehiculosalida = time(); 
- date_default_timezone_set('America/Argentina/Buenos_Aires');
- $horaVehiculoSalida = date ("H:i", $horaVehiculosalida);
- $patente2 = $_GET['patente'];
- $horaVehiculosalida = $horaVehiculosalida;
+$patente2 = $_GET['patente'];
+ 
+ $precio=5;
 
-
- $archivo = fopen('vehiculos.txt', 'r');
+$archivo = fopen('vehiculos.txt', 'r');
 
 while(!feof ($archivo))
 {
@@ -15,7 +15,16 @@ while(!feof ($archivo))
 
     if ($objeto->patente == $patente2)
     {
-        header("Location: ok.php");
+    	$tiempo = $objeto->$horaEntrada - $horaSalida;
+
+    	$hora = $tiempo;
+        list($horas, $minutos,) = explode(':', $hora);
+        $hora_en_segundos = ($horas * 3600 ) + ($minutos * 60 );
+        echo $tiempoPagar
+
+        $pagar = $tiempoPagar * $precio;
+
+    	header("Location: pagar.php");
 		fclose($archivo);
 		exit();
 	}
@@ -30,33 +39,6 @@ while(!feof ($archivo))
 
 exit();
 fclose($archivo);
-
-
- 
-
-$hora = $horaVehiculo;
-list($horas, $minutos, $segundos) = explode(':', $hora);
-$hora_en_segundos = ($horas * 3600 ) + ($minutos * 60 ) + $segundos;
-echo $hora_en_segundos; 
-
-$hora2 = $horaVehiculoSalida;
-list($horas, $minutos, $segundos) = explode(':', $hora);
-$hora_en_segundos = ($horas * 3600 ) + ($minutos * 60 ) + $segundos;
-echo $hora_en_segundos; 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>
 
