@@ -34,7 +34,10 @@
               <a class="nav-link" href="login.php">INICIAR SESION</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="cargarvehiculos.php">CARGA DE VEHICULOS</a>
+              <a class="nav-link disabled" href="cargarvehiculo.php">CARGA DE VEHICULOS</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="facturar.php">FACTURAR <span class="sr-only">(current)</span></a>
             </li>
           </ul>
           <form class="form-inline mt-2 mt-md-0">
@@ -51,7 +54,7 @@
       <h1>INCORRECTO</h1>
         <img src="https://thumbs.dreamstime.com/t/hombre-de-negocios-d-que-lleva-cabo-s%C3%ADmbolo-incorrecto-cruzado-de-la-muestra-58021709.jpg">
         <br>
-        <a href="login.php"><h4>reingresar</a></h4>
+        <a href="index.php"><h4>INICIO</a></h4>
     </main>
 
     </main>

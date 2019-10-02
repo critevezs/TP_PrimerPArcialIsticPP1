@@ -9,24 +9,23 @@ while(!feof ($archivo))
 {
 	$objeto = json_decode(fgets($archivo));
 
-    if ($objeto->nombre == $nombreUsuario) 
+    if ($objeto->nombre == $nombreUsuario && $objeto->contraseña == $contraseñaUsuario) 
     {
-        
-    if ($objeto->contraseña == $contraseñaUsuario)
-    {
-    header("Location: ok.php");
-	fclose($archivo);
+        header("Location: ok.php");
+	    fclose($archivo);
+	    exit();
 	}
-
-    }
 
 	else
     {
     	header("Location: no.php");
 		fclose($archivo);
+		exit();
 		
-    }
+	}
 }   
 
+
 fclose($archivo);
+exit();
 ?>

@@ -1,1 +1,2 @@
-{"patente":"zxc123","horaEntrada":1569957564}
+{"patente":"rrr777","horaIngreso":"15:59"}
+{"patente":"IWV783","horaIngreso":"11:39"}

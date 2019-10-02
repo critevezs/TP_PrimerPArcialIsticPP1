@@ -1,11 +1,13 @@
 <?php
 
-date_default_timezone_set('America/Argentina/Buenos_Aires');
-$horaSalida = mktime();
+$precio=5;
+
+
  
 $patente2 = $_GET['patente'];
+$horaSalida = $_GET["horaSalida"];
  
- $precio=5;
+ 
 
 
 $archivo = fopen('vehiculos.txt', 'r');
@@ -14,21 +16,17 @@ while(!feof ($archivo))
 {
 	$objeto = json_decode(fgets($archivo));
 
-	$autoIngreso= $$objeto->patente;
-	$horaAuto = $objeto->$horaEntrada;
+    
 
-    if ($autoIngreso == $patente2)
+    if ($objeto->patente == $patente2)
     {
-    	$tiempo = $horaAuto - $horaSalida;
+    	$tiempo = $horaSalida - $objeto->horaIngreso;
 
-    	$hora = $tiempo;
-        list($horas, $minutos,) = explode(':', $hora);
-        $hora_en_segundos = ($horas * 3600 ) + ($minutos * 60 );
-        echo $tiempoPagar
+    
 
-        $pagar = $tiempoPagar * $precio
+        $cobrar = $tiempo * $precio;
 
-    	header("Location: pagar.php? cobrar=".$pagar."&ingreso=".$horaAuto."&salida=".$horaSalida);
+    	header("Location: pagar.php? &cobrar=".$cobrar."&ingreso=".$objeto->horaIngreso."&salida=".$horaSalida."&patente=".$patente2);
 		fclose($archivo);
 		exit();
 	}

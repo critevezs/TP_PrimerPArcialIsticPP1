@@ -1,2 +1,3 @@
-
-{"nombre":"cristian","contrase\u00f1a":"1212"}
+{"nombre":"martin","contrase\u00f1a":"999"}
+{"nombre":"oscar","contrase\u00f1a":"111"}
+{"nombre":"guillermo","contrase\u00f1a":"888"}
