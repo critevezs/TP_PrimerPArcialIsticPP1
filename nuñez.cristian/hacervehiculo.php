@@ -3,7 +3,7 @@
   
  
  $miObjeto2->patente = $_GET['patente'];
- $miObjeto2->horaIngreso = $_GET["hora"];
+ $miObjeto2->horaIngreso = mktime();
  
  $archivo = fopen('vehiculos.txt', 'a');
  fwrite($archivo, json_encode($miObjeto2)."\n");

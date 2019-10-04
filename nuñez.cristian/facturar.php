@@ -56,9 +56,7 @@
               Patente:<br>
               <input type="text" name="patente" value="">
               <br>
-              HoraSalida:<br>
-              <input type="time" name="horaSalida" value="">
-              <br>
+              
               <input type="submit" value="aceptar">
         </form> 
       

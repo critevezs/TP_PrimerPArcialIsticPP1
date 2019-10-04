@@ -1,5 +1,6 @@
 <?php
 
+$Bandera=0;
 $nombreUsuario = $_GET['nombre'];
 $contraseñaUsuario = $_GET['contraseña'];
 
@@ -11,21 +12,23 @@ while(!feof ($archivo))
 
     if ($objeto->nombre == $nombreUsuario && $objeto->contraseña == $contraseñaUsuario) 
     {
-        header("Location: ok.php");
-	    fclose($archivo);
-	    exit();
-	}
+    	$Bandera=1;
+    }
+        
+}
 
-	else
-    {
-    	header("Location: no.php");
-		fclose($archivo);
-		exit();
+if ($Bandera==1)
+{
+	header("Location: ok.php");
+	
+}
+else
+{
+    header("Location: no.php");
+    
 		
-	}
-}   
+}
+  
+ fclose($archivo);
 
-
-fclose($archivo);
-exit();
 ?>
