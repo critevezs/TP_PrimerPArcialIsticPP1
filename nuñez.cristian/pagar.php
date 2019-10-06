@@ -54,6 +54,8 @@
       <h1>FACTURAR</h1>
 
       <?php
+
+          date_default_timezone_set('America/Argentina/Buenos_Aires');
         
           $patente = $_GET["patente"];
           $cobrar = $_GET['cobrar'];

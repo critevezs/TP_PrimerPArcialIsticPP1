@@ -1,1 +1,2 @@
-{"Vehiculo":"ddd333","fechaEntrada":null,"importe":130847545.83333334,"fechaSalida":1570170550}
+
+{"Vehiculo":"iwv783","fechaEntrada":"06-10-19 16:55","fechaSalida":"06-10-19 16:57","importe":9.083333333333334}
