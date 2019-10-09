@@ -21,7 +21,7 @@
     <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="index.php">Low Rier</a>
+        <a class="navbar-brand" href="index.php">Low Rider</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,10 +31,10 @@
               <a class="nav-link" href="registro.php">REGISTRARSE <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.php">INICIAR SESION</a>
+              <a class="nav-link" href="login.php">INICIAR SESION <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="cargarvehiculo.php">CARGA DE VEHICULOS</a>
+              <a class="nav-link disabled" href="cargarvehiculo.php">CARGA DE VEHICULOS <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="facturar.php">FACTURAR <span class="sr-only">(current)</span></a>
@@ -53,13 +53,30 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
+      
+    <?php
 
-      <h1>INCORRECTO</h1>
-        <img src="https://thumbs.dreamstime.com/t/hombre-de-negocios-d-que-lleva-cabo-s%C3%ADmbolo-incorrecto-cruzado-de-la-muestra-58021709.jpg">
-        <br>
-        <a href="index.php"><h4>INICIO</a></h4>
-    </main>
+  $totalFacturado = 0;
 
+    $archivo = fopen("facturados.txt", "r");
+    while(!feof($archivo)) 
+    {
+      $objeto = json_decode(fgets($archivo));
+      if ($objeto != "") 
+      {
+
+      echo "<li>";
+      echo "vehiculo: "  .$objeto->Vehiculo. "fecha/hora ingreso: "  .$objeto->fechaEntrada. "fecha/hora salida: "  .$objeto->fechaSalida. "cobro:$ " .$objeto->importe;
+      echo "</li>";
+
+        $totalFacturado = $totalFacturado + $objeto->importe;
+      }
+    }
+
+    echo "<h1> TOTAL FACTURADO: $".$totalFacturado."</h1>";
+    fclose($archivo);
+  ?>
+      
     </main>
 
     <footer class="footer">

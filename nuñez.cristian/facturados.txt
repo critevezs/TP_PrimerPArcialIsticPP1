@@ -1,2 +1,4 @@
-
-{"Vehiculo":"iwv783","fechaEntrada":"06-10-19 16:55","fechaSalida":"06-10-19 16:57","importe":9.083333333333334}
+{"Vehiculo":"rrr777","fechaEntrada":"09-10-19 01:41","fechaSalida":"09-10-19 01:42","importe":2.055555555555556}
+{"Vehiculo":"uuu000","fechaEntrada":"09-10-19 01:42","fechaSalida":"09-10-19 01:42","importe":1.4444444444444446}
+{"Vehiculo":"iwv783","fechaEntrada":"09-10-19 01:42","fechaSalida":"09-10-19 01:42","importe":1.5555555555555556}
+{"Vehiculo":"aaa111","fechaEntrada":"09-10-19 01:42","fechaSalida":"09-10-19 01:42","importe":1.9444444444444444}

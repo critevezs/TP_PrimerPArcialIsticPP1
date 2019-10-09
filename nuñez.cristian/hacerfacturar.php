@@ -1,6 +1,6 @@
 <?php
 
-$precio=5;
+$precio=200;
 $patente2 = $_GET['patente'];
 
 
@@ -21,7 +21,7 @@ while(!feof ($archivo))
 
         $tiempo = $horaSalida - $objeto->horaIngreso;
 
-        $cobrar = ($tiempo / 60) * $precio;
+        $cobrar = ($tiempo / 60 /60) * $precio;
     
 
        $objetoFacturado = new stdClass();

@@ -34,10 +34,13 @@
               <a class="nav-link" href="login.php">INICIAR SESION <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="cargavehiculo.php">CARGA DE VEHICULOS <span class="sr-only">(current)</span></a>
+              <a class="nav-link disabled" href="cargarvehiculo.php">CARGA DE VEHICULOS <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="facturar.php">FACTURAR <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="facturados.php">FACTURADOS <span class="sr-only">(current)</span></a>
             </li>
           </ul>
           <form class="form-inline mt-2 mt-md-0">
