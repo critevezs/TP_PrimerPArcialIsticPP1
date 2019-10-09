@@ -1,4 +1,5 @@
-{"Vehiculo":"rrr777","fechaEntrada":"09-10-19 01:41","fechaSalida":"09-10-19 01:42","importe":2.055555555555556}
-{"Vehiculo":"uuu000","fechaEntrada":"09-10-19 01:42","fechaSalida":"09-10-19 01:42","importe":1.4444444444444446}
-{"Vehiculo":"iwv783","fechaEntrada":"09-10-19 01:42","fechaSalida":"09-10-19 01:42","importe":1.5555555555555556}
-{"Vehiculo":"aaa111","fechaEntrada":"09-10-19 01:42","fechaSalida":"09-10-19 01:42","importe":1.9444444444444444}
+
+{"Vehiculo":"rrr555","fechaEntrada":"09-10-19 20:06","fechaSalida":"09-10-19 20:06","importe":1.111111111111111}
+{"Vehiculo":"ppp666","fechaEntrada":"09-10-19 20:06","fechaSalida":"09-10-19 20:06","importe":0.5555555555555555}
+{"Vehiculo":"aaa111","fechaEntrada":"09-10-19 20:30","fechaSalida":"09-10-19 20:30","importe":0.5}
+{"Vehiculo":"aaa111","fechaEntrada":"09-10-19 20:30","fechaSalida":"09-10-19 20:37","importe":24.000000000000004}
