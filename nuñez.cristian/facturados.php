@@ -53,10 +53,42 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
+
+    <style>
+   
+    th 
+    {
+      color:black;
+      background-color: lightblue;
+    }
+    td {color:black;}
+    table,th,td 
+    {
+     border: 3px solid black;
+    text-align: center;
+    }
+
+    </style>
+
+
+
+<table style="width:100%">
+
+       <tr>
+            <th>Vehiculo</th>
+            <th>Fecha/Hora Ingreso</th>
+            <th>Fecha/Hora Salida</th>
+            <th>Total Cobrado</th>
+          </tr>
+
+
       
-    <?php
+<?php
 
   $totalFacturado = 0;
+  date_default_timezone_set('America/Argentina/Buenos_Aires');
+
+
 
     $archivo = fopen("facturados.txt", "r");
     while(!feof($archivo)) 
@@ -64,16 +96,17 @@
       $objeto = json_decode(fgets($archivo));
       if ($objeto != "") 
       {
+        echo "<tr>";
+          echo "<td>".$objeto->Vehiculo."</td>   <td>".$objeto->fechaEntrada."</td>   <td>".$objeto->fechaSalida."</td>   <td>".$objeto->importe."</td>";
+        echo "</tr>";
+        echo "</table>";
 
-      echo "<li>";
-      echo "vehiculo: "  .$objeto->Vehiculo. "fecha/hora ingreso: "  .$objeto->fechaEntrada. "fecha/hora salida: "  .$objeto->fechaSalida. "cobro:$ " .$objeto->importe;
-      echo "</li>";
 
         $totalFacturado = $totalFacturado + $objeto->importe;
       }
     }
 
-    echo "<h1> TOTAL FACTURADO: $".$totalFacturado."</h1>";
+    echo "<h2> TOTAL FACTURADO: $".$totalFacturado."</h2>";
     fclose($archivo);
   ?>
       
