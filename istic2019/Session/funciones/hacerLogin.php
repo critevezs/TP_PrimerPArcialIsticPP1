@@ -36,20 +36,13 @@
 			}
 		 	
 		}	
-		if ($booUsuario == 0) {
-			header("Location: ../paginas/login.php?error=usuarioincorrecto");
-			fclose($archivo);
+		if ($booUsuario == 0) 
+		{
+			header("Location: ../paginas/no.php");
 			exit();
 		}
-		else 
-	    {
-			header("Location: ../paginas/login.php?error=contraseñaincorrecta");
-			fclose($archivo);
-			exit();
-		}
-
+			
 		fclose($archivo);
 	}	
-	header("Location: ../paginas/login.php");
-	exit();
+	
 ?>

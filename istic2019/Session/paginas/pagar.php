@@ -10,7 +10,7 @@ session_start();
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>ISTIC Estacionamiento</title>
+    <title>Lowraider</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -32,48 +32,31 @@ session_start();
     <!-- Begin page content -->
     <main role="main" class="container">
          
-      <h1 class="mt-5">Estacionamiento ISTIC 2019</h1>
-      <p class="lead">Bienvenido a Estacionamientos Alumno</p>
+      <form action="hacerfacturar.php"> 
 
+      <h1>Cobrar</h1>
 
+      <?php
 
+          date_default_timezone_set('America/Argentina/Buenos_Aires');
+        
+          $patente = $_GET["patente"];
+          $cobrar = $_GET['cobrar'];
+          $ingreso = $_GET['ingreso'];
+          $salida = $_GET['salida'];
 
-            <?php 
-                  if(isset($_SESSION['usuario'])){
-                    //solo muestra el menu si estas con la variable de sesión instaciada
-            ?>
-                              <h2>Usted ya esta logeado</h2>
-                              <h3>  <?php echo $_SESSION['usuario'];?>  </h3>
-                             
-            <?php 
-              }
-              else
-              {
-            ?>
+          echo "Vehiculo: ".$patente."<br>";
+          echo "Hora de ingreso: ".date("d-m-y H:i",$ingreso)."<br>";
+          echo "Hora de salida: ".date("d-m-y H:i",$salida)."<br>";
+          echo "Cobrar: $".$cobrar."<br>";
+        
 
-                              <form class="form-signin" action="../funciones/hacerLogin.php">
-                              
-                              <h1 class="h3 mb-3 font-weight-normal">Ingrese sus datos</h1>
-                              <label for="inputEmail" class="sr-only">USuario</label>
-                              <input type="text" id="inputEmail"  name="inputEmail"class="form-control" placeholder="tu usuario" required autofocus>
-                              <label for="inputPassword" class="sr-only">Clave</label>
-                              <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="la clave secreta" required>
-                              <div class="checkbox mb-3">
-                                <label>
-                                  <input type="checkbox" value="remember-me"> Recordarme
-                                </label>
-                              </div>
-                              <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
-                              <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
-                              </form>
-                            
-
-
-
-            <?php 
-              }
-            ?>
-
+          ?>
+            <br>
+            <br>
+            <a href="../paginas/facturar.php"><h4>Facturar Otro Vehiculo</h4></a>
+            <a href="../index.php"><h4>Volver al Inicio</h4></a>
+        
     </main>
       
      <footer class="footer">

@@ -33,16 +33,13 @@ session_start();
     <main role="main" class="container">
          
        
-       <h1>Contraseña y/o Usuario Incorrecto</h1>
+       <h1>Patente no Localizada</h1>
         
          <img src="https://thumbs.dreamstime.com/t/hombre-de-negocios-d-que-lleva-cabo-s%C3%ADmbolo-incorrecto-cruzado-de-la-muestra-58021709.jpg">
         <br>
         
-          <h1>Vover a Login</h1>
-          <a href="../paginas/login.php"><h2>login</h2></a>
-
-          <h1>Registrarse</h1>
-          <a href="../paginas/registro.php"><h2>Registro</h2></a>
+          <h1>Volver a buscar Patente</h1>
+          <a href="../paginas/facturar.php"><h2>Buscar</h2></a>
 
     </main>
       

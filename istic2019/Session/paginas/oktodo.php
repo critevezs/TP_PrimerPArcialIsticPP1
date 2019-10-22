@@ -32,17 +32,38 @@ session_start();
     <!-- Begin page content -->
     <main role="main" class="container">
          
-       
-       <h1>Contraseña y/o Usuario Incorrecto</h1>
-        
-         <img src="https://thumbs.dreamstime.com/t/hombre-de-negocios-d-que-lleva-cabo-s%C3%ADmbolo-incorrecto-cruzado-de-la-muestra-58021709.jpg">
+        <?php
+        if (isset($_SESSION['nombre']) && isset($_SESSION['contraseña'] ))
+        {
+        ?>
+       <h1>TE REGISTRASTE CON EXITO!!</h1>
+        <img src="https://maestrofinanciero.com/wp-content/uploads/2012/07/exitosos.jpg">
         <br>
         
-          <h1>Vover a Login</h1>
+         
+          <h1>Ahora podes loguearte</h1>
           <a href="../paginas/login.php"><h2>login</h2></a>
 
-          <h1>Registrarse</h1>
-          <a href="../paginas/registro.php"><h2>Registro</h2></a>
+        <?php
+        }
+        ?>
+
+         <?php
+        if (isset($_SESSION['patente']))
+        {
+        ?>
+       <h1>Vehiculo ingresado con exito!!</h1>
+        <img src="https://maestrofinanciero.com/wp-content/uploads/2012/07/exitosos.jpg">
+        <br>
+
+        <h1>volver al inicio</h1>  <a href="../index.php"><h2>inicio</h2></a>
+        <h1>cargar nuevo vehiculo</h1>  <a href="../paginas/cargarvehiculo.php"><h2>cargar</h2></a>
+        
+         
+          
+        <?php
+        }
+        ?>
 
     </main>
       

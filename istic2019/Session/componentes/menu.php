@@ -39,15 +39,15 @@
             ?>
 
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/ingresoVehiculo.php">Ingresar Vehiculo</a>
+              <a class="nav-link" href="/istic2019/Session/paginas/cargarvehiculo.php">Ingresar Vehiculo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/facturarVehiculo.php">Facturar Vehiculo</a>
+              <a class="nav-link" href="/istic2019/Session/paginas/facturar.php">Facturar Vehiculo</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/istic2019/Session/paginas/listarUsuarios.php">Listar Usuarios</a>
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/listarVehiculos.php">Listar Vehiculos</a>
+              <a class="nav-link" href="/istic2019/Session/paginas/facturados.php">Listar Vehiculos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/istic2019/Session/funciones/hacerLogout.php">Cerrar Sesion</a>

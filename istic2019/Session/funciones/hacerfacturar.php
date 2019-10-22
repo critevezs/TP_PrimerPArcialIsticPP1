@@ -2,10 +2,11 @@
 
 $precio=200;
 $patente2 = $_GET['patente'];
+$bandera=0;
 
 
 
-$archivo = fopen('vehiculos.txt', 'r');
+$archivo = fopen('../archivos/vehiculos.txt', 'r');
 
 while(!feof ($archivo))
 {
@@ -14,7 +15,10 @@ while(!feof ($archivo))
 
     if ($objeto->patente == $patente2)
     {
-    
+      if (isset($objeto))
+      {
+        $bandera=1;
+
         date_default_timezone_set('America/Argentina/Buenos_Aires');
 
         $horaSalida = mktime();
@@ -24,30 +28,33 @@ while(!feof ($archivo))
         $cobrar = ($tiempo / 60 /60) * $precio;
     
 
-       $objetoFacturado = new stdClass();
+        $objetoFacturado = new stdClass();
 
-       date_default_timezone_set('America/Argentina/Buenos_Aires');
+        date_default_timezone_set('America/Argentina/Buenos_Aires');
 
-       $objetoFacturado->Vehiculo = $patente2;
-       $objetoFacturado->fechaEntrada = date("d-m-y H:i",$objeto->horaIngreso);
-       $objetoFacturado->fechaSalida = date("d-m-y H:i",$horaSalida);
-       $objetoFacturado->importe = $cobrar;
+        $objetoFacturado->Vehiculo = $patente2;
+        $objetoFacturado->fechaEntrada = date("d-m-y H:i",$objeto->horaIngreso);
+        $objetoFacturado->fechaSalida = date("d-m-y H:i",$horaSalida);
+        $objetoFacturado->importe = $cobrar;
     
-       $archivo1 = fopen('facturados.txt', 'a');
-       fwrite($archivo1, json_encode($objetoFacturado)."\n");
-       fclose($archivo1);
+        $archivo1 = fopen('../archivos/facturados.txt', 'a');
+        fwrite($archivo1, json_encode($objetoFacturado)."\n");
+        fclose($archivo1);
        
        
-       header("Location: pagar.php? &cobrar=".$cobrar."&ingreso=".$objeto->horaIngreso."&salida=".$horaSalida."&patente=".$patente2);
-       break;
-    
+        header("Location:../paginas/pagar.php? &cobrar=".$cobrar."&ingreso=".$objeto->horaIngreso."&salida=".$horaSalida."&patente=".$patente2);
+        exit();
+      }
    }
 
-   else
-   {
-       header("Location: no.php");
-   }
+   
  
+}
+
+if ($bandera==0)
+{
+  header("Location: ../paginas/nopatentenolocalizada.php");
+  exit();
 }
 
 fclose($archivo);

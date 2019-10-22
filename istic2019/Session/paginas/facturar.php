@@ -10,7 +10,7 @@ session_start();
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>ISTIC Estacionamiento</title>
+    <title>Lowraider</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -32,47 +32,22 @@ session_start();
     <!-- Begin page content -->
     <main role="main" class="container">
          
-      <h1 class="mt-5">Estacionamiento ISTIC 2019</h1>
-      <p class="lead">Bienvenido a Estacionamientos Alumno</p>
+                              <div align="center"><img src="https://us.cdn.eltribuno.com/072016/1487243186771.jpg" width=100 height=100></div><br>
 
-
-
-
-            <?php 
-                  if(isset($_SESSION['usuario'])){
-                    //solo muestra el menu si estas con la variable de sesión instaciada
-            ?>
-                              <h2>Usted ya esta logeado</h2>
-                              <h3>  <?php echo $_SESSION['usuario'];?>  </h3>
-                             
-            <?php 
-              }
-              else
-              {
-            ?>
-
-                              <form class="form-signin" action="../funciones/hacerLogin.php">
+                              <form class="form-signin" action="../funciones/hacerfacturar.php">
                               
-                              <h1 class="h3 mb-3 font-weight-normal">Ingrese sus datos</h1>
-                              <label for="inputEmail" class="sr-only">USuario</label>
-                              <input type="text" id="inputEmail"  name="inputEmail"class="form-control" placeholder="tu usuario" required autofocus>
-                              <label for="inputPassword" class="sr-only">Clave</label>
-                              <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="la clave secreta" required>
-                              <div class="checkbox mb-3">
-                                <label>
-                                  <input type="checkbox" value="remember-me"> Recordarme
-                                </label>
-                              </div>
-                              <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
-                              <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+                              <h1 class="h3 mb-3 font-weight-normal">Facturar Vehiculo</h1>
+                              <label for="inputEmail" class="sr-only">Patente</label>
+                              <input type="text" id="patente"  name="patente"class="form-control" placeholder="patente" required autofocus>
+                             
+                              <button class="btn btn-lg btn-primary btn-block" type="submit">Facturar</button>
+                              
                               </form>
                             
 
 
 
-            <?php 
-              }
-            ?>
+            
 
     </main>
       

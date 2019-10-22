@@ -10,7 +10,7 @@ session_start();
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>ISTIC Estacionamiento</title>
+    <title>Lowraider</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -20,6 +20,22 @@ session_start();
     <link href="../css/floating-labels.css" rel="stylesheet">
 
   </head>
+
+      <style>
+   
+    th 
+    {
+      color:black;
+      background-color: lightblue;
+    }
+    td {color:black;}
+    table,th,td 
+    {
+     border: 3px solid black;
+    text-align: center;
+    }
+
+    </style>
 
   <body>
 
@@ -32,53 +48,53 @@ session_start();
     <!-- Begin page content -->
     <main role="main" class="container">
          
-      <h1 class="mt-5">Estacionamiento ISTIC 2019</h1>
-      <p class="lead">Bienvenido a Estacionamientos Alumno</p>
+    
 
 
 
+      <table style="width:100%">
 
-            <?php 
-                  if(isset($_SESSION['usuario'])){
-                    //solo muestra el menu si estas con la variable de sesión instaciada
-            ?>
-                              <h2>Usted ya esta logeado</h2>
-                              <h3>  <?php echo $_SESSION['usuario'];?>  </h3>
-                             
-            <?php 
-              }
-              else
-              {
-            ?>
+       <tr>
+            <th>Vehiculo</th>
+            <th>Fecha/Hora Ingreso</th>
+            <th>Fecha/Hora Salida</th>
+            <th>Total Cobrado</th>
+          </tr>
 
-                              <form class="form-signin" action="../funciones/hacerLogin.php">
-                              
-                              <h1 class="h3 mb-3 font-weight-normal">Ingrese sus datos</h1>
-                              <label for="inputEmail" class="sr-only">USuario</label>
-                              <input type="text" id="inputEmail"  name="inputEmail"class="form-control" placeholder="tu usuario" required autofocus>
-                              <label for="inputPassword" class="sr-only">Clave</label>
-                              <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="la clave secreta" required>
-                              <div class="checkbox mb-3">
-                                <label>
-                                  <input type="checkbox" value="remember-me"> Recordarme
-                                </label>
-                              </div>
-                              <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
-                              <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
-                              </form>
-                            
+
+      
+<?php
+
+  $totalFacturado = 0;
+  date_default_timezone_set('America/Argentina/Buenos_Aires');
 
 
 
-            <?php 
-              }
-            ?>
+    $archivo = fopen("../archivos/facturados.txt", "r");
+    while(!feof($archivo)) 
+    {
+      $objeto = json_decode(fgets($archivo));
+      if ($objeto != "") 
+      {
+        echo "<tr>";
+        echo "<td>".$objeto->Vehiculo."</td>   <td>".$objeto->fechaEntrada."</td>   <td>".$objeto->fechaSalida."</td>   <td>".$objeto->importe."</td>";
+        echo "</tr>";
+        echo "</table>";
+
+
+        $totalFacturado = $totalFacturado + $objeto->importe;
+      }
+    }
+
+    echo "<h2> TOTAL FACTURADO: $".$totalFacturado."</h2>";
+    fclose($archivo);
+  ?>
 
     </main>
       
      <footer class="footer">
     <?php
-        include "componentes/pie.php";
+        include "../componentes/pie.php";
     ?>
     </footer>
 

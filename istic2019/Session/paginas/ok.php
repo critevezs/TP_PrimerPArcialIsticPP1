@@ -32,11 +32,11 @@ session_start();
     <!-- Begin page content -->
     <main role="main" class="container">
          
+       
        <h1>TE REGISTRASTE CON EXITO!!</h1>
         <img src="https://maestrofinanciero.com/wp-content/uploads/2012/07/exitosos.jpg">
         <br>
         
-         
           <h1>Ahora podes loguearte</h1>
           <a href="../paginas/login.php"><h2>login</h2></a>
 
