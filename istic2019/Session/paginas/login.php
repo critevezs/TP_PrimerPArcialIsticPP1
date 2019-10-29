@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -44,6 +45,8 @@ session_start();
             ?>
                               <h2>Usted ya esta logeado</h2>
                               <h3>  <?php echo $_SESSION['usuario'];?>  </h3>
+
+
                              
             <?php 
               }

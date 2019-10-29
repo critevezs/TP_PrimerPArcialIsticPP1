@@ -45,7 +45,7 @@
               <a class="nav-link" href="/istic2019/Session/paginas/facturar.php">Facturar Vehiculo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/listarUsuarios.php">Listar Usuarios</a>
+              <a class="nav-link" href="/istic2019/Session/paginas/listausuarios.php">Listar Usuarios</a>
             <li class="nav-item">
               <a class="nav-link" href="/istic2019/Session/paginas/facturados.php">Listar Vehiculos</a>
             </li>

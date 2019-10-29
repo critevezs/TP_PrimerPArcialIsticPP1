@@ -24,11 +24,12 @@
 				$booUsuario = 1;
 				if ($objeto->contraseña == $claveIngresada)
 				{
-				    
+				    $booPassword= 1;
 
 					fclose($archivo);
 					$_SESSION['usuario']=$objeto->nombre;
 					$_SESSION['perfil']=$objeto->perfil;
+					//$_COOKIE['cookiename']=$usuarioIngresado;
 
 					header("Location: ../paginas/login.php?exito=signup");
 					exit();
@@ -41,8 +42,14 @@
 			header("Location: ../paginas/no.php");
 			exit();
 		}
+		if ($booPassword==0)
+		{
+            header("Location: ../paginas/no.php");
+			exit();
+		}
 			
 		fclose($archivo);
+		
 	}	
 	
 ?>

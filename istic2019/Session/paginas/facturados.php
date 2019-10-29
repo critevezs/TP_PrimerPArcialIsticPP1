@@ -8,7 +8,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="icon" href="../favicon.ico">
 
     <title>Lowraider</title>
 
@@ -64,7 +64,7 @@ session_start();
 
       
 <?php
-
+  $cantidadAutos=0;
   $totalFacturado = 0;
   date_default_timezone_set('America/Argentina/Buenos_Aires');
 
@@ -79,13 +79,16 @@ session_start();
         echo "<tr>";
         echo "<td>".$objeto->Vehiculo."</td>   <td>".$objeto->fechaEntrada."</td>   <td>".$objeto->fechaSalida."</td>   <td>".$objeto->importe."</td>";
         echo "</tr>";
-        echo "</table>";
+        
 
 
         $totalFacturado = $totalFacturado + $objeto->importe;
+        $cantidadAutos = $cantidadAutos + 1;
+        //$_SESSION['estacionados'] = $cantidadAutos;
       }
     }
-
+    echo "</table>";
+ ;
     echo "<h2> TOTAL FACTURADO: $".$totalFacturado."</h2>";
     fclose($archivo);
   ?>

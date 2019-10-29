@@ -10,7 +10,7 @@ session_start();
     <meta name="author" content="">
     <link rel="icon" href="../favicon.ico">
 
-    <title>lowraider</title>
+    <title>Lowraider</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -21,9 +21,25 @@ session_start();
 
   </head>
 
+      <style>
+   
+    th 
+    {
+      color:black;
+      background-color: lightgreen;
+    }
+    td {color:black;}
+    table,th,td 
+    {
+     border: 3px solid black;
+    text-align: center;
+    }
+
+    </style>
+
   <body>
 
-   <header>
+    <header>
     <?php
         include "../componentes/menu.php";
     ?>
@@ -31,29 +47,51 @@ session_start();
 
     <!-- Begin page content -->
     <main role="main" class="container">
+         
+    
+     <h3>listado de usuarios registrados</h3>
+     <br>
 
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Mexico_road_sign_estacionamiento.svg/1024px-Mexico_road_sign_estacionamiento.svg.png" width=50 height=50><img src="https://www.logolynx.com/images/logolynx/cc/cc7870cf8dca735bd9872c4845939519.jpeg" width=200 height=150><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Mexico_road_sign_estacionamiento.svg/1024px-Mexico_road_sign_estacionamiento.svg.png" width=50 height=50>
 
-      <form action="../funciones/hacerRegistro.php" class="form-signin">
-      <div class="text-center mb-4">
-        <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <table style="width:100%">
 
+       <tr>
+            <th>usuarios</th>
+            
+          </tr>
+
+
+      
+<?php
+
+  
+
+
+
+    $archivo = fopen("../archivos/registro.txt", "r");
+    while(!feof($archivo)) 
+    {
+      $objeto = json_decode(fgets($archivo));
+      if ($objeto != "") 
+      {
+        echo "<tr>";
+        echo "<td>".$objeto->nombre."</td>";   
+        echo "</tr>";
         
 
 
-        <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
+        
+      }
+    }
+    echo "</table>";
 
-      </div>     
-        <input type="text" name="nombre" class="form-control" placeholder="Ingrese Usuario" required autofocus>
-        <input type="password" name="contraseña" class="form-control" placeholder="Ingrese Contraseña" required>
-
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
-      
-    </form> 
+    
+    fclose($archivo);
+  ?>
 
     </main>
-
-    <footer class="footer">
+      
+     <footer class="footer">
     <?php
         include "../componentes/pie.php";
     ?>
@@ -65,7 +103,7 @@ session_start();
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" cAlumnorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
   </body>
 </html>
