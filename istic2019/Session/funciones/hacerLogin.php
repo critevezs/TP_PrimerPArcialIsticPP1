@@ -1,5 +1,11 @@
 <?php
+    include 'accesoadatos.php';
 	session_start();
+    
+    $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+			$consulta =$objetoAccesoDato->RetornarConsulta("select nombre  , clave  from usuario");
+			$consulta->execute();			
+			$datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 
 	$usuarioIngresado = $_GET['usuario'];
 	$claveIngresada = $_GET['contraseña'];
@@ -14,15 +20,16 @@
 	}
 	else
 	{
-		$archivo = fopen("../archivos/registro.txt", "r") or die("Imposible arbrir el archivo");
+		//$archivo = fopen("../archivos/registro.txt", "r") or die("Imposible arbrir el archivo");
 	
-		while(!feof($archivo)) 
+		//while(!feof($archivo)) 
+		foreach ($datos as $usuario) 
 		{
-			$objeto = json_decode(fgets($archivo));
-			if ($objeto->nombre == $usuarioIngresado) 
+			//$objeto = json_decode(fgets($archivo));
+			if ($usuario->nombre == $usuarioIngresado) 
 			{	
 				$booUsuario = 1;
-				if ($objeto->contraseña == $claveIngresada)
+				if ($usuario->clave == $claveIngresada)
 				{
 				    $booPassword= 1;
 
@@ -30,6 +37,7 @@
 					$_SESSION['usuario']=$objeto->nombre;
 					$_SESSION['perfil']=$objeto->perfil;
 					//$_COOKIE['cookiename']=$usuarioIngresado;
+					setcookie("usuario", $_SESSION['usuario']);
 
 					header("Location: ../paginas/login.php?exito=signup");
 					exit();
@@ -42,7 +50,7 @@
 			header("Location: ../paginas/no.php");
 			exit();
 		}
-		if ($booPassword==0)
+		if ($booPassword == 0)
 		{
             header("Location: ../paginas/no.php");
 			exit();
