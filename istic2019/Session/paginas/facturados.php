@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -64,33 +65,46 @@ session_start();
 
       
 <?php
+
+  include 'accesoadatos.php';
+
   $cantidadAutos=0;
   $totalFacturado = 0;
   date_default_timezone_set('America/Argentina/Buenos_Aires');
 
 
 
-    $archivo = fopen("../archivos/facturados.txt", "r");
-    while(!feof($archivo)) 
+  $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+  $consulta =$objetoAccesoDato->RetornarConsulta("select patente  , horaingreso, horasalida,importe  from vehiculosfacturados");
+  $consulta->execute();     
+  $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
+
+    //$archivo = fopen("../archivos/facturados.txt", "r");
+    //while(!feof($archivo)) 
+    foreach ($datos as $vehiculosfacturados)
     {
-      $objeto = json_decode(fgets($archivo));
-      if ($objeto != "") 
-      {
-        echo "<tr>";
-        echo "<td>".$objeto->Vehiculo."</td>   <td>".$objeto->fechaEntrada."</td>   <td>".$objeto->fechaSalida."</td>   <td>".$objeto->importe."</td>";
+      //$objeto = json_decode(fgets($archivo));
+      //if ($objeto != "") 
+      //{
+        //echo "<tr>";
+        //echo "<td>".$objeto->Vehiculo."</td>   <td>".$objeto->fechaEntrada."</td>   <td>".$objeto->fechaSalida."</td>   <td>".$objeto->importe."</td>";
+        //echo "</tr>";
+
+      echo "<tr>";
+        echo "<td>".$vehiculosfacturados['patente']."</td>   <td>".$vehiculosfacturados['horaingreso']."</td>   <td>".$vehiculosfacturados['horasalida']."</td>   <td>".$vehiculosfacturados['importe']."</td>";
         echo "</tr>";
         
 
 
-        $totalFacturado = $totalFacturado + $objeto->importe;
+        $totalFacturado = $totalFacturado + $vehiculosfacturados['importe'];
         $cantidadAutos = $cantidadAutos + 1;
         //$_SESSION['estacionados'] = $cantidadAutos;
-      }
+      
     }
     echo "</table>";
  ;
     echo "<h2> TOTAL FACTURADO: $".$totalFacturado."</h2>";
-    fclose($archivo);
+    //fclose($archivo);
   ?>
 
     </main>

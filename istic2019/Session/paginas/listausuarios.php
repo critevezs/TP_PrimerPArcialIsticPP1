@@ -64,29 +64,35 @@ session_start();
       
 <?php
 
-  
+  include 'accesoadatos.php';
+
+      $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+      $consulta =$objetoAccesoDato->RetornarConsulta("select nombre  from usuario");
+      $consulta->execute();     
+      $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-    $archivo = fopen("../archivos/registro.txt", "r");
-    while(!feof($archivo)) 
+    //$archivo = fopen("../archivos/registro.txt", "r");
+    //while(!feof($archivo)) 
+    foreach ($datos as $usuario)  
     {
-      $objeto = json_decode(fgets($archivo));
-      if ($objeto != "") 
-      {
+      //$objeto = json_decode(fgets($archivo));
+      //if ($objeto != "") 
+      //{
         echo "<tr>";
-        echo "<td>".$objeto->nombre."</td>";   
+        echo "<td>".$usuario['nombre']."</td>";   
         echo "</tr>";
         
 
 
         
-      }
+      //}
     }
     echo "</table>";
 
     
-    fclose($archivo);
+   // fclose($archivo);
   ?>
 
     </main>
