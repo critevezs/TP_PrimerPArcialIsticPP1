@@ -31,6 +31,7 @@ session_start();
 
     <!-- Begin page content -->
     <main role="main" class="container">
+      
          
                               <div align="center"><img src="https://us.cdn.eltribuno.com/072016/1487243186771.jpg" width=100 height=100></div><br>
 

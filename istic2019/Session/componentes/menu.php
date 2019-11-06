@@ -42,12 +42,15 @@
               <a class="nav-link" href="/istic2019/Session/paginas/cargarvehiculo.php">Ingresar Vehiculo</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="/istic2019/Session/paginas/vehiculosenestacionamiento.php">Vehiculos estacionados</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="/istic2019/Session/paginas/facturar.php">Facturar Vehiculo</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/istic2019/Session/paginas/listausuarios.php">Listar Usuarios</a>
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/facturados.php">Listar Vehiculos</a>
+              <a class="nav-link" href="/istic2019/Session/paginas/facturados.php">Vehiculos facturados</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/istic2019/Session/funciones/hacerLogout.php">Cerrar Sesion</a>
@@ -77,10 +80,7 @@
             ?>
          
           </ul>
-          <form class="form-inline mt-2 mt-md-0" action="/istic2019/Session/funciones/hacerLogout.php">
-            <input class="form-control mr-sm-2" type="text" placeholder="Qien Soy" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Salir</button>
-          </form>
+          
         </div>
       </nav>
  
