@@ -64,7 +64,7 @@ session_start();
       
 <?php
 
-  include 'accesoadatos.php';
+  include '../funciones/accesoadatos.php';
 
       $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
       $consulta =$objetoAccesoDato->RetornarConsulta("select nombre  from usuario");

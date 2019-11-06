@@ -63,10 +63,10 @@ session_start();
           </tr>
 
 
-      
+<form class="form-signin" action="../funciones/hacerBorradovehiculos.php">
 <?php
 
-  include 'accesoadatos.php';
+  include '../funciones/accesoadatos.php';
 
   $cantidadAutos=0;
   $totalFacturado = 0;
@@ -75,12 +75,13 @@ session_start();
 
 
   $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-  $consulta =$objetoAccesoDato->RetornarConsulta("select patente  , horaingreso, horasalida,importe  from vehiculosfacturados");
+  $consulta =$objetoAccesoDato->RetornarConsulta("select id ,patente  , horaingreso, horasalida,importe  from vehiculosfacturados");
   $consulta->execute();     
   $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 
     //$archivo = fopen("../archivos/facturados.txt", "r");
     //while(!feof($archivo)) 
+
     foreach ($datos as $vehiculosfacturados)
     {
       //$objeto = json_decode(fgets($archivo));
@@ -91,8 +92,10 @@ session_start();
         //echo "</tr>";
 
       echo "<tr>";
-        echo "<td>".$vehiculosfacturados['patente']."</td>   <td>".$vehiculosfacturados['horaingreso']."</td>   <td>".$vehiculosfacturados['horasalida']."</td>   <td>".$vehiculosfacturados['importe']."</td>";
+        echo "<td>".$vehiculosfacturados['patente']."</td>   <td>".$vehiculosfacturados['horaingreso']."</td>   <td>".$vehiculosfacturados['horasalida']."</td>   <td>".$vehiculosfacturados['importe']."</td> <td>".$vehiculosfacturados['id']."</td>";
         echo "</tr>";
+
+        echo "<input type='submit' name='hacer'  value='".$vehiculosfacturados['id']."'>borrar</input><br>";
         
 
 
@@ -102,10 +105,11 @@ session_start();
       
     }
     echo "</table>";
- ;
+ 
     echo "<h2> TOTAL FACTURADO: $".$totalFacturado."</h2>";
     //fclose($archivo);
   ?>
+</form>
 
     </main>
       
