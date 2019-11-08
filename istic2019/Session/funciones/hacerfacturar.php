@@ -7,8 +7,8 @@ $patente2 = $_GET['patente'];
 $bandera=0;
 
 
-$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-      $consulta =$objetoAccesoDato->RetornarConsulta("select patente  , horaingreso  from registrovehiculo");
+      $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+      $consulta =$objetoAccesoDato->RetornarConsulta("select id ,patente  , horaingreso  from registrovehiculo");
       $consulta->execute();     
       $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 //$archivo = fopen('../archivos/vehiculos.txt', 'r');
@@ -49,6 +49,12 @@ $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
 
             $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
             $select="INSERT INTO vehiculosfacturados( patente, horaingreso, horasalida,importe) VALUES ('$objetoFacturado->Vehiculo','$objetoFacturado->fechaEntrada','$objetoFacturado->fechaSalida','$objetoFacturado->importe')";
+            $consulta =$objetoAccesoDato->RetornarConsulta($select);
+            $consulta->execute();
+
+            $id=$registrovehiculo['id'];
+            $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+            $select="DELETE FROM `registrovehiculo` WHERE id=$id";
             $consulta =$objetoAccesoDato->RetornarConsulta($select);
             $consulta->execute();
        
