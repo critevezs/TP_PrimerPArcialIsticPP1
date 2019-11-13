@@ -62,7 +62,7 @@ session_start();
           </tr>
 
 
-<form class="form-signin" action="../funciones/hacerBorradovehiculos.php">
+<!--<form class="form-signin" action="../funciones/hacerBorradovehiculos.php">-->
 <?php
 
   include '../funciones/accesoadatos.php';
@@ -93,7 +93,7 @@ session_start();
       echo "<tr>";
         echo "<td>".$registrovehiculo['patente']."</td>   <td>".$registrovehiculo['horaingreso']."</td> <td>".$registrovehiculo['id']."</td>";
 
-      echo "<input type='submit' name='hacer'  value='".$registrovehiculo['id']."'>borrar</input><br>";
+      //echo "<input type='submit' name='hacer'  value='".$registrovehiculo['id']."'>borrar</input><br>";
         
 
 

@@ -33,7 +33,7 @@ session_start();
     <main role="main" class="container">
          
        
-       <h1>VEHICULO YA ESTACIONADO</h1>
+       <h1>EL VEHICULO SE ENCUENTRA EN EL ESTACIONAMIENTO</h1>
        <BR>
        COMPRUEBE NUEVAMENTE LA PATENTE
         
@@ -44,7 +44,7 @@ session_start();
           <a href="../paginas/.php"><h2>INGRESAR</h2></a>
 
           <h2>VER VEHICULOS ESTACIONADOS</h2>
-          <a href="../paginas/vehiculosenestacionamiento.php"><h2>FACTURADOS</h2></a>
+          <a href="../paginas/vehiculosenestacionamiento.php"><h2>ESTACIONADOS</h2></a>
 
     </main>
       

@@ -5,9 +5,12 @@ include 'accesoadatos.php';
 
  date_default_timezone_set('America/Argentina/Buenos_Aires');
  $hora=mktime();
+ $hora2=date("d-m-y H:i",$hora);
+
+ 
 
  $miObjeto2->patente = $_GET['patente'];
- $miObjeto2->horaIngreso = $hora;
+ $miObjeto2->horaIngreso = $hora2;
 
     $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 	$consulta =$objetoAccesoDato->RetornarConsulta("select patente from registrovehiculo");

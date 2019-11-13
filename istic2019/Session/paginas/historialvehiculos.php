@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -8,7 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="icon" href="../favicon.ico">
 
     <title>Lowraider</title>
 
@@ -21,6 +22,22 @@ session_start();
 
   </head>
 
+      <style>
+   
+    th 
+    {
+      color:black;
+      background-color: lightblue;
+    }
+    td {color:black;}
+    table,th,td 
+    {
+     border: 3px solid black;
+    text-align: center;
+    }
+
+    </style>
+
   <body>
 
     <header>
@@ -32,36 +49,53 @@ session_start();
     <!-- Begin page content -->
     <main role="main" class="container">
          
-      <form action="hacerfacturar.php"> 
+    
 
-      <h1>Cobrar</h1>
 
-      <?php
 
-          date_default_timezone_set('America/Argentina/Buenos_Aires');
-        
-          $patente = $_GET["patente"];
-          $cobrar = $_GET['cobrar'];
-          $ingreso = $_GET['ingreso'];
-          $salida = $_GET['salida'];
+      <table style="width:100%">
 
-          echo "Vehiculo: ".$patente."<br>";
-          echo "Hora de ingreso: ".$ingreso."<br>";
-          echo "Hora de salida: ".$salida."<br>";
-          echo "Cobrar: $".$cobrar."<br>";
-        
+       <tr>
+            <th>N°</th>
+            <th>Vehiculo</th>
+            <th>Fecha/Hora Ingreso</th>
+            <th>Fecha/Hora Salida</th>
+            <th>Total Cobrado</th>
+            
 
-          ?>
-            <br>
-            <br>
-            <a href="../paginas/facturar.php"><h4>Facturar Otro Vehiculo</h4></a>
-            <a href="../index.php"><h4>Volver al Inicio</h4></a>
-        
+          </tr>
+
+
+
+<?php
+
+  include '../funciones/accesoadatos.php';
+
+  date_default_timezone_set('America/Argentina/Buenos_Aires');
+  $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+  $consulta =$objetoAccesoDato->RetornarConsulta("select id ,patente  , horaingreso, horasalida,importe  from vehiculosfacturados");
+  $consulta->execute();     
+  $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
+
+    
+
+    foreach ($datos as $vehiculosfacturados)
+    {
+        echo "<tr>";
+        echo "<td>".$vehiculosfacturados['id']."</td> <td>".$vehiculosfacturados['patente']."</td>   <td>".$vehiculosfacturados['horaingreso']."</td>   <td>".$vehiculosfacturados['horasalida']."</td>   <td>".$vehiculosfacturados['importe']."</td>";
+        echo "</tr>";
+    }
+
+    echo "</table>";
+ 
+  ?>
+
+
     </main>
       
      <footer class="footer">
     <?php
-        include "componentes/pie.php";
+        include "../componentes/pie.php";
     ?>
     </footer>
 

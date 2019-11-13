@@ -69,10 +69,10 @@
 
            
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/historicoVehiculos.php">Historial Vehiculos</a>
+              <a class="nav-link" href="/istic2019/Session/paginas/historialvehiculos.php">Historial Vehiculos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/paginas/historicoEmpleados.php">Historial Empleados</a>
+              <a class="nav-link" href="/istic2019/Session/paginas/historialusuarios.php">Historial Empleados</a>
             </li>
 
             <?php 

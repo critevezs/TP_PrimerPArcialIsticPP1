@@ -2,7 +2,7 @@
 
 include 'accesoadatos.php';
 
-$precio=200;
+$precio=10;
 $patente2 = $_GET['patente'];
 $bandera=0;
 
@@ -28,6 +28,7 @@ $bandera=0;
         date_default_timezone_set('America/Argentina/Buenos_Aires');
 
         $horaSalida = mktime();
+        $horaSalida2=date("d-m-y H:i",$horaSalida);
 
         $tiempo = $horaSalida - $registrovehiculo['horaingreso'];
 
@@ -39,8 +40,8 @@ $bandera=0;
         date_default_timezone_set('America/Argentina/Buenos_Aires');
 
         $objetoFacturado->Vehiculo = $patente2;
-        $objetoFacturado->fechaEntrada = date("d-m-y H:i",$registrovehiculo['horaingreso']);
-        $objetoFacturado->fechaSalida = date("d-m-y H:i",$horaSalida);
+        $objetoFacturado->fechaEntrada =$registrovehiculo['horaingreso'];
+        $objetoFacturado->fechaSalida =$horaSalida2;
         $objetoFacturado->importe = $cobrar;
     
         //$archivo1 = fopen('../archivos/facturados.txt', 'a');
@@ -59,7 +60,7 @@ $bandera=0;
             $consulta->execute();
        
        
-        header("Location:../paginas/pagar.php? &cobrar=".$cobrar."&ingreso=".$registrovehiculo['horaingreso']."&salida=".$horaSalida."&patente=".$patente2);
+        header("Location:../paginas/pagar.php? &cobrar=".$cobrar."&ingreso=".$registrovehiculo['horaingreso']."&salida=".$horaSalida2."&patente=".$patente2);
         exit();
       }
    }
