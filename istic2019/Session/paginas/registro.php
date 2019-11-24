@@ -47,7 +47,9 @@ session_start();
         <input type="text" name="nombre" class="form-control" placeholder="Ingrese Usuario" required autofocus>
         <input type="password" name="contraseña" class="form-control" placeholder="Ingrese Contraseña" required>
 
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+        <button class="image" type="submit"><img src="http://urmoprelaft.cnbs.gob.hn/wp-content/uploads/2018/11/registro.png" width="250" height="40"></button>
+
+      <!--<button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>-->
       
     </form> 
 

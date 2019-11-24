@@ -38,10 +38,12 @@ session_start();
                               
                               <h1 class="h3 mb-3 font-weight-normal">Ingrese patente del vehiculo</h1>
                               <label for="inputEmail" class="sr-only">Patente</label>
-                              <input type="text" id="patente"  name="patente"class="form-control" placeholder="patente completa" required autofocus>
+                              <input type="text" id="patente"  name="patente" pattern="([A-ZÑ]{3}\d{3}|[A-ZÑ]{2}\d{3}[A-ZÑ]{2})$" class="form-control" placeholder="AAA111 o AA123AA" required autofocus>
                              
                               
-                              <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+                              <!--<button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>-->
+
+                              <button class="image" type="submit"><img src="http://testingchile.cl/w3/wp-content/uploads/2015/07/mercadolibre-ingresar.png" width="250" height="60"></button>
                               
                               </form>
                             

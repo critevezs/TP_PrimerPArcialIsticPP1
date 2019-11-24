@@ -66,7 +66,8 @@ session_start();
                                   <input type="checkbox" value="remember-me"> Recordarme
                                 </label>
                               </div>
-                              <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+                              <button class="image" type="submit"><img src="https://techcrunch.com/wp-content/uploads/2019/02/Instagram-two-factor-authentication.png" width="200" height="40"></button>
+                              <!--<button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>-->
                               <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
                               </form>
                             
