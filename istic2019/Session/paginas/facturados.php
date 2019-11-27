@@ -34,6 +34,7 @@ session_start();
     {
      border: 3px solid black;
     text-align: center;
+    font-family:Comic Sans MS;
     }
 
     </style>
@@ -108,6 +109,7 @@ session_start();
 
 
     </main>
+  </body>
       
      <footer class="footer">
     <?php

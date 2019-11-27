@@ -26,13 +26,14 @@ session_start();
     th 
     {
       color:black;
-      background-color: lightgreen;
+      background-color: lightblue;
     }
     td {color:black;}
     table,th,td 
     {
      border: 3px solid black;
     text-align: center;
+    font-family:Comic Sans MS;
     }
 
     </style>

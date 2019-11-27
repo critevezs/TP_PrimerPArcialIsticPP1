@@ -20,8 +20,30 @@ session_start();
     <link href="../css/floating-labels.css" rel="stylesheet">
 
   </head>
+  <style>
+        html,body
+        {
+          margin: 0;
+          
+        }
+       main
+       {
+        background-image: url(https://www.eldiariodechihuahua.mx/v6/media/uploads/galeria/2019/09/10/20190910024022389-0-1560575.jpg);
+        width: 100%;
+        height:100%;
 
-  <body>
+
+       }
+       h2
+       {
+        color: black;
+       }
+       
+
+  </style>
+
+
+  <body >
 
     <header>
     <?php
@@ -31,12 +53,14 @@ session_start();
 
     <!-- Begin page content -->
     <main role="main" class="container">
+
+                              <!--<img id="estirada" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%" src="https://us.cdn.eltribuno.com/072016/1487243186771.jpg" />-->
          
-                              <div align="center"><img src="https://us.cdn.eltribuno.com/072016/1487243186771.jpg" width=100 height=100></div><br>
+                             <!--<div align="center"><img src="https://us.cdn.eltribuno.com/072016/1487243186771.jpg" width=100 height=100></div><br>-->
 
                               <form class="form-signin" action="../funciones/hacervehiculo.php">
                               
-                              <h1 class="h3 mb-3 font-weight-normal">Ingrese patente del vehiculo</h1>
+                              <h1 class="h3 mb-3 font-weight-normal"><h2>Ingrese patente del vehiculo</h2>
                               <label for="inputEmail" class="sr-only">Patente</label>
                               <input type="text" id="patente"  name="patente" pattern="([A-ZÑ]{3}\d{3}|[A-ZÑ]{2}\d{3}[A-ZÑ]{2})$" class="form-control" placeholder="AAA111 o AA123AA" required autofocus>
                              

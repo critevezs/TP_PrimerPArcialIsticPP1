@@ -1,6 +1,6 @@
 
       <!-- Fixed navbar -->
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-light fixed-top"style="background-color: lightblue;font-family:Comic Sans MS;font-size: 18px;font-weight:bold;" >
         <a class="navbar-brand" href="#"><?php if(isset($_SESSION['usuario'])){
                                               echo $_SESSION['usuario'];
                                             }
@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/istic2019/Session/index.php">Inicio <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/istic2019/Session/index.php">Inicio<span class="sr-only">(current)</span></a>
             </li>
               <?php 
             if(isset($_SESSION['usuario'])==false){
