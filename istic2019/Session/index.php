@@ -30,10 +30,37 @@ session_start();
     ?>
     </header>
 
+    <style>
+      body
+      {
+      background: url(https://www.eldiariodechihuahua.mx/v6/media/uploads/galeria/2019/09/10/20190910024022389-0-1560575.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      height: 90%;
+
+      }
+
+      footer
+      {
+        height: 10%;
+       font-family:Comic Sans MS;
+      }
+       
+       h2
+       {
+        color: black;
+        font-family:Comic Sans MS;
+       }
+       
+
+  </style>
+
     <!-- Begin page content -->
     <main role="main" class="container">
          
-       <h1 class="mt-5">ESTACIONAMIENTO LOW RIDER</h1>
+       <h1 class="mt-5"><h2>ESTACIONAMIENTO LOW RIDER</h2></h1>
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Mexico_road_sign_estacionamiento.svg/1024px-Mexico_road_sign_estacionamiento.svg.png" width=100 height=100><img src="https://www.logolynx.com/images/logolynx/cc/cc7870cf8dca735bd9872c4845939519.jpeg" width=400 height=300><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Mexico_road_sign_estacionamiento.svg/1024px-Mexico_road_sign_estacionamiento.svg.png" width=100 height=100>
 
     </main>

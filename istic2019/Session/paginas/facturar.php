@@ -36,6 +36,29 @@ session_start();
     font-family:Comic Sans MS;
     }
 
+    body
+      {
+      background: url(https://www.eldiariodechihuahua.mx/v6/media/uploads/galeria/2019/09/10/20190910024022389-0-1560575.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      height: 90%;
+
+      }
+
+      footer
+      {
+        height: 10%;
+       font-family:Comic Sans MS;
+      }
+
+      h2
+       {
+        color: black;
+        font-family:Comic Sans MS;
+       }
+
     </style>
 
   <body>
@@ -53,11 +76,11 @@ session_start();
 
      <div class="col-sm-4">
         
-     <div align="center"><img src="https://us.cdn.eltribuno.com/072016/1487243186771.jpg" width=100 height=100></div><br>
+     <!--<div align="center"><img src="https://us.cdn.eltribuno.com/072016/1487243186771.jpg" width=100 height=100></div><br>-->
 
      <form class="form-signin" action="../funciones/hacerfacturar.php">
                               
-     <h1 class="h3 mb-3 font-weight-normal">Facturar Vehiculo</h1>
+     <h1 class="h3 mb-3 font-weight-normal"><h2>Facturar Vehiculo</h2></h1>
      <label for="inputEmail" class="sr-only">Patente</label>
      <input type="text" id="patente"  name="patente" pattern="([A-ZÑ]{3}\d{3}|[A-ZÑ]{2}\d{3}[A-ZÑ]{2})$" class="form-control" placeholder="AAA111 o AA123AA" required autofocus>
 

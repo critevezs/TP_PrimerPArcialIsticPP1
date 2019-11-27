@@ -37,6 +37,24 @@ session_start();
     font-family:Comic Sans MS;
     }
 
+
+    body
+      {
+      background: url(https://www.eldiariodechihuahua.mx/v6/media/uploads/galeria/2019/09/10/20190910024022389-0-1560575.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      height: 90%;
+
+      }
+
+      footer
+      {
+        height: 10%;
+       font-family:Comic Sans MS;
+      }
+
     </style>
 
   <body>
